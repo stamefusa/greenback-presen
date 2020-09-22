@@ -14,7 +14,7 @@ upper_color = np.array([180,255,255])
 #But populer HSV H:0-360 so I use [0..360]/2
 
 #capture device open
-cap = cv2.VideoCapture(1)   #for object
+cap = cv2.VideoCapture(0)   #for object
 #
 #bak = cv2.VideoCapture(0)   #for background
 #bak = cv2.imread('./3810600_l.jpg')
@@ -34,6 +34,11 @@ while(1):
 
     # Threshold the HSV image to get only blue colors
     mask = cv2.inRange(hsv, lower_color, upper_color)
+
+    # マスク範囲を絞る
+    mask[:, 1:200] = 0
+    mask[:, 500:] = 0
+
     inv_mask = cv2.bitwise_not(mask)
 
     # Bitwise-AND mask,inv_mask and original image
