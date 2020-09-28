@@ -34,7 +34,7 @@ cap = cv2.VideoCapture(1)   #for object
 front = cv2.imread('./front.jpg')
 #bak = cv2.imread('./back.jpg')
 #bak = cv2.imread('./pink.jpg')
-back = cv2.resize(cv2.imread('./back2.jpg'), dsize=(width, height))
+back = cv2.resize(cv2.imread('./back.jpg'), dsize=(width, height))
 
 # プレゼン資料読み込み
 p_width = 960
